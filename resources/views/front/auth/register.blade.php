@@ -17,12 +17,12 @@
                         </div>
                     </div>
                     @include('alert')
-                    <form action="{{ route('register.post  " method="POST" class="signin-form">
+                    <form action="{{ route('register.post') }}" method="POST" class="signin-form">
                         @csrf
                         <input type="hidden" name="_target_path" value="{{ $_target_path }}">
 
                         <div class="form-group mt-3">
-                            <input type="text" name="name" value="{{ old('name  " class="form-control" required>
+                            <input type="text" name="name" value="{{ old('name') }}" class="form-control" required>
                             <label class="form-control-placeholder" for="name">Votre nom</label>
                             @error('name')
                                 <div class="alert alert-danger text-center msg" id="error">
@@ -31,7 +31,7 @@
                             @enderror
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" name="email" value="{{ old('email  " class="form-control" required>
+                            <input type="text" name="email" value="{{ old('email') }}" class="form-control" required>
                             <label class="form-control-placeholder" for="email">Email</label>
                             @error('email')
                                 <div class="alert alert-danger text-center msg" id="error">
@@ -61,7 +61,7 @@
                                 m'inscris</button>
                         </div>
                     </form>
-                    <p class="text-center">Vous êtes déjà membre ? <a href="{{ route('login  ">Identifiez-vous</a></p>
+                    <p class="text-center">Vous êtes déjà membre ? <a href="{{ route('login') }}">Identifiez-vous</a></p>
                 </div>
             </div>
         </div>

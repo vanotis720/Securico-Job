@@ -46,7 +46,7 @@
                                 <li><a href="#">À propos de nous</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">S'inscrire</a></li>
-                                <li><a href="{{ route('login  ">Se connecter</a></li>
+                                <li><a href="{{ route('login') }}">Se connecter</a></li>
                             </ul>
                         </div>
                     </div>

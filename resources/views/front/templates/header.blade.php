@@ -35,10 +35,10 @@
                             <div class="header-btn d-none f-right d-lg-block">
                                 @auth
                                     <a href="#" class="btn head-btn1">Mon profil</a>
-                                    <a href="{{ route('logout  " class="btn head-btn2">Déconnexion</a>
+                                    <a href="{{ route('logout') }}" class="btn head-btn2">Déconnexion</a>
                                 @else
-                                    <a href="{{ route('register  " class="btn head-btn1">S'inscrire</a>
-                                    <a href="{{ route('login  " class="btn head-btn2">Se connecter</a>
+                                    <a href="{{ route('register') }}" class="btn head-btn1">S'inscrire</a>
+                                    <a href="{{ route('login') }}" class="btn head-btn2">Se connecter</a>
                                 @endauth
                             </div>
                         </div>
