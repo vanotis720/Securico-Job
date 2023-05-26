@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-5">
             <div class="wrap">
-                <div class="img" style="background-image: url({{ asset('assets/auth/images/bg-human.jpg') }});"></div>
+                <div class="img" style="background-image: url( assets/auth/images/bg-human.jpg  );"></div>
                 <div class="login-wrap p-4 p-md-5">
                     <div class="d-flex">
                         <div class="w-100">
@@ -17,11 +17,11 @@
                         </div>
                     </div>
                     @include('alert')
-                    <form action="{{ route('login.post') }}" method="POST" class="signin-form">
+                    <form action="{{ route('login.post  " method="POST" class="signin-form">
                         @csrf
                         <input type="hidden" name="_target_path" value="{{ $_target_path }}">
                         <div class="form-group mt-3">
-                            <input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
+                            <input type="email" name="email" value="{{ old('email  " class="form-control" required>
                             <label class="form-control-placeholder" for="email">Email</label>
                         </div>
                         <div class="form-group">
@@ -45,7 +45,7 @@
                             </div> --}}
                             </div>
                     </form>
-                    <p class="text-center">Vous n'êtes pas membre ? <a href="{{ route('register') }}">Inscrivez-vous</a></p>
+                    <p class="text-center">Vous n'êtes pas membre ? <a href="{{ route('register  ">Inscrivez-vous</a></p>
                 </div>
             </div>
         </div>

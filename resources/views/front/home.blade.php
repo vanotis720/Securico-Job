@@ -6,7 +6,7 @@
         <!-- Mobile Menu -->
         <div class="slider-active">
             <div class="single-slider slider-height d-flex align-items-center"
-                data-background="{{ asset('assets/img/hero/h1_hero.jpg') }}">
+                data-background=" assets/img/hero/h1_hero.jpg  ">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-9 col-md-10">
@@ -149,7 +149,7 @@
     </div>
     <!-- Our Services End -->
     <!-- Online CV Area Start -->
-    <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="{{ asset('assets/img/gallery/cv_bg.jpg') }}">
+    <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background=" assets/img/gallery/cv_bg.jpg  ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
@@ -181,7 +181,7 @@
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="job_details.html"><img src="{{ asset('assets/img/icon/job-list1.png') }}"
+                                <a href="job_details.html"><img src=" assets/img/icon/job-list1.png  "
                                         alt=""></a>
                             </div>
                             <div class="job-tittle">
@@ -204,7 +204,7 @@
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="job_details.html"><img src="{{ asset('assets/img/icon/job-list2.png') }}"
+                                <a href="job_details.html"><img src=" assets/img/icon/job-list2.png  "
                                         alt=""></a>
                             </div>
                             <div class="job-tittle">
@@ -227,7 +227,7 @@
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="job_details.html"><img src="{{ asset('assets/img/icon/job-list3.png') }}"
+                                <a href="job_details.html"><img src=" assets/img/icon/job-list3.png  "
                                         alt=""></a>
                             </div>
                             <div class="job-tittle">
@@ -250,7 +250,7 @@
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="job_details.html"><img src="{{ asset('assets/img/icon/job-list4.png') }}"
+                                <a href="job_details.html"><img src=" assets/img/icon/job-list4.png  "
                                         alt=""></a>
                             </div>
                             <div class="job-tittle">
@@ -276,7 +276,7 @@
     <!-- Featured_job_end -->
     <!-- How  Apply Process Start-->
     <div class="apply-process-area apply-bg pt-150 pb-150"
-        data-background="{{ asset('assets/img/gallery/how-applybg.png') }}">
+        data-background=" assets/img/gallery/how-applybg.png  ">
         <div class="container">
             <!-- Section Tittle -->
             <div class="row">
@@ -343,7 +343,7 @@
                                 <!-- founder -->
                                 <div class="testimonial-founder  ">
                                     <div class="founder-img mb-30">
-                                        <img src="{{ asset('assets/img/testmonial/testimonial-founder.png') }}"
+                                        <img src=" assets/img/testmonial/testimonial-founder.png  "
                                             alt="">
                                         <span>Margaret Lawson</span>
                                         <p>Creative Director</p>
@@ -363,7 +363,7 @@
                                 <!-- founder -->
                                 <div class="testimonial-founder  ">
                                     <div class="founder-img mb-30">
-                                        <img src="{{ asset('assets/img/testmonial/testimonial-founder.png') }}"
+                                        <img src=" assets/img/testmonial/testimonial-founder.png  "
                                             alt="">
                                         <span>Margaret Lawson</span>
                                         <p>Creative Director</p>
@@ -383,7 +383,7 @@
                                 <!-- founder -->
                                 <div class="testimonial-founder  ">
                                     <div class="founder-img mb-30">
-                                        <img src="{{ asset('assets/img/testmonial/testimonial-founder.png') }}"
+                                        <img src=" assets/img/testmonial/testimonial-founder.png  "
                                             alt="">
                                         <span>Margaret Lawson</span>
                                         <p>Creative Director</p>
@@ -426,7 +426,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="support-location-img">
-                        <img src="{{ asset('assets/img/service/support-img.jpg') }}" alt="">
+                        <img src=" assets/img/service/support-img.jpg  " alt="">
                         <div class="support-img-cap text-center">
                             <p>Since</p>
                             <span>1994</span>
