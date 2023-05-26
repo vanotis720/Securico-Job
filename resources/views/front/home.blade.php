@@ -6,7 +6,7 @@
         <!-- Mobile Menu -->
         <div class="slider-active">
             <div class="single-slider slider-height d-flex align-items-center"
-                data-background=" assets/img/hero/h1_hero.jpg  ">
+                data-background="assets/img/hero/bg-human.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-9 col-md-10">
@@ -41,8 +41,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle text-center">
-                        <span>FEATURED TOURS Packages</span>
-                        <h2>Browse Top Categories </h2>
+                        <span>Catégories</span>
+                        <h2>Parcourir les meilleures catégories</h2>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                             <span class="flaticon-tour"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Design & Creative</a></h5>
+                            <h5><a href="job_listing.html">Conception et création</a></h5>
                             <span>(653)</span>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <span class="flaticon-cms"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Design & Development</a></h5>
+                            <h5><a href="job_listing.html">Conception & Développement</a></h5>
                             <span>(658)</span>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                             <span class="flaticon-report"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Sales & Marketing</a></h5>
+                            <h5><a href="job_listing.html">Ventes et Marketing</a></h5>
                             <span>(658)</span>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                             <span class="flaticon-app"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Mobile Application</a></h5>
+                            <h5><a href="job_listing.html">Application mobile</a></h5>
                             <span>(658)</span>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                             <span class="flaticon-high-tech"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Information Technology</a></h5>
+                            <h5><a href="job_listing.html">Informatique</a></h5>
                             <span>(658)</span>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                             <span class="flaticon-real-estate"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Real Estate</a></h5>
+                            <h5><a href="job_listing.html">Immobilier</a></h5>
                             <span>(658)</span>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                             <span class="flaticon-content"></span>
                         </div>
                         <div class="services-cap">
-                            <h5><a href="job_listing.html">Content Writer</a></h5>
+                            <h5><a href="job_listing.html">Rédacteur de contenu</a></h5>
                             <span>(658)</span>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="browse-btn2 text-center mt-50">
-                        <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
+                        <a href="/" class="border-btn2">Tout parcourir</a>
                     </div>
                 </div>
             </div>
@@ -149,14 +149,14 @@
     </div>
     <!-- Our Services End -->
     <!-- Online CV Area Start -->
-    <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background=" assets/img/gallery/cv_bg.jpg  ">
+    <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="assets/auth/images/bg-human.jpg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
                     <div class="cv-caption text-center">
-                        <p class="pera1">FEATURED TOURS Packages</p>
-                        <p class="pera2"> Make a Difference with Your Online Resume!</p>
-                        <a href="#" class="border-btn2 border-btn4">Upload your cv</a>
+                        <p class="pera1">Profil en ligne</p>
+                        <p class="pera2"> Faites la différence avec votre CV en ligne!</p>
+                        <a href="#" class="border-btn2 border-btn4">Télécharger votre CV</a>
                     </div>
                 </div>
             </div>
@@ -170,8 +170,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle text-center">
-                        <span>Recent Job</span>
-                        <h2>Featured Jobs</h2>
+                        <span>Offre d'emploi récente</span>
+                        <h2>Offres d'emploi</h2>
                     </div>
                 </div>
             </div>
@@ -181,12 +181,11 @@
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="job_details.html"><img src=" assets/img/icon/job-list1.png  "
-                                        alt=""></a>
+                                <a href="job_details.html"><img src=" assets/img/icon/job-list1.png  " alt=""></a>
                             </div>
                             <div class="job-tittle">
                                 <a href="job_details.html">
-                                    <h4>Digital Marketer</h4>
+                                    <h4>Spécialiste du marketing numérique</h4>
                                 </a>
                                 <ul>
                                     <li>Creative Agency</li>
@@ -196,8 +195,8 @@
                             </div>
                         </div>
                         <div class="items-link f-right">
-                            <a href="job_details.html">Full Time</a>
-                            <span>7 hours ago</span>
+                            <a href="job_details.html">Voir les détails</a>
+                            <span>il y a 7 heures</span>
                         </div>
                     </div>
                     <!-- single-job-content -->
@@ -219,7 +218,7 @@
                             </div>
                         </div>
                         <div class="items-link f-right">
-                            <a href="job_details.html">Full Time</a>
+                            <a href="job_details.html">Voir les détails</a>
                             <span>7 hours ago</span>
                         </div>
                     </div>
@@ -242,7 +241,7 @@
                             </div>
                         </div>
                         <div class="items-link f-right">
-                            <a href="job_details.html">Full Time</a>
+                            <a href="job_details.html">Voir les détails</a>
                             <span>7 hours ago</span>
                         </div>
                     </div>
@@ -265,7 +264,7 @@
                             </div>
                         </div>
                         <div class="items-link f-right">
-                            <a href="job_details.html">Full Time</a>
+                            <a href="job_details.html">Voir les détails</a>
                             <span>7 hours ago</span>
                         </div>
                     </div>
@@ -275,15 +274,14 @@
     </section>
     <!-- Featured_job_end -->
     <!-- How  Apply Process Start-->
-    <div class="apply-process-area apply-bg pt-150 pb-150"
-        data-background=" assets/img/gallery/how-applybg.png  ">
+    <div class="apply-process-area apply-bg pt-150 pb-150" data-background=" assets/img/gallery/how-applybg.png  ">
         <div class="container">
             <!-- Section Tittle -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle white-text text-center">
-                        <span>Apply process</span>
-                        <h2> How it works</h2>
+                        <span>Processus de candidature</span>
+                        <h2>Comment ça marche ?</h2>
                     </div>
                 </div>
             </div>
@@ -295,9 +293,8 @@
                             <span class="flaticon-search"></span>
                         </div>
                         <div class="process-cap">
-                            <h5>1. Search a job</h5>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
-                                laborea.</p>
+                            <h5>1. Rechercher un emploi</h5>
+                            <p>Commencez par rechercher votre offre dans la liste ou la barre de recherche.</p>
                         </div>
                     </div>
                 </div>
@@ -307,9 +304,8 @@
                             <span class="flaticon-curriculum-vitae"></span>
                         </div>
                         <div class="process-cap">
-                            <h5>2. Apply for job</h5>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
-                                laborea.</p>
+                            <h5>2. Postuler pour un poste</h5>
+                            <p>Une fois que vous avez trouvé l'offre qui vous convient, vous pouvez candidater.</p>
                         </div>
                     </div>
                 </div>
@@ -319,9 +315,8 @@
                             <span class="flaticon-tour"></span>
                         </div>
                         <div class="process-cap">
-                            <h5>3. Get your job</h5>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
-                                laborea.</p>
+                            <h5>3. Obtenez votre travail</h5>
+                            <p>Si votre profil correspond aux attentes du recruteur, alors vous serez recontacté.</p>
                         </div>
                     </div>
                 </div>
@@ -329,88 +324,16 @@
         </div>
     </div>
     <!-- How  Apply Process End-->
-    <!-- Testimonial Start -->
-    <div class="testimonial-area testimonial-padding">
-        <div class="container">
-            <!-- Testimonial contents -->
-            <div class="row d-flex justify-content-center">
-                <div class="col-xl-8 col-lg-8 col-md-10">
-                    <div class="h1-testimonial-active dot-style">
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <!-- founder -->
-                                <div class="testimonial-founder  ">
-                                    <div class="founder-img mb-30">
-                                        <img src=" assets/img/testmonial/testimonial-founder.png  "
-                                            alt="">
-                                        <span>Margaret Lawson</span>
-                                        <p>Creative Director</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-top-cap">
-                                    <p>“I am at an age where I just want to be fit and healthy our bodies are our
-                                        responsibility! So start caring for your body and it will care for you. Eat
-                                        clean it will care for you and workout hard.”</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <!-- founder -->
-                                <div class="testimonial-founder  ">
-                                    <div class="founder-img mb-30">
-                                        <img src=" assets/img/testmonial/testimonial-founder.png  "
-                                            alt="">
-                                        <span>Margaret Lawson</span>
-                                        <p>Creative Director</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-top-cap">
-                                    <p>“I am at an age where I just want to be fit and healthy our bodies are our
-                                        responsibility! So start caring for your body and it will care for you. Eat
-                                        clean it will care for you and workout hard.”</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <!-- founder -->
-                                <div class="testimonial-founder  ">
-                                    <div class="founder-img mb-30">
-                                        <img src=" assets/img/testmonial/testimonial-founder.png  "
-                                            alt="">
-                                        <span>Margaret Lawson</span>
-                                        <p>Creative Director</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-top-cap">
-                                    <p>“I am at an age where I just want to be fit and healthy our bodies are our
-                                        responsibility! So start caring for your body and it will care for you. Eat
-                                        clean it will care for you and workout hard.”</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
+
     <!-- Support Company Start-->
-    <div class="support-company-area support-padding fix">
+    {{-- <div class="support-company-area support-padding fix">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6">
                     <div class="right-caption">
                         <!-- Section Tittle -->
                         <div class="section-tittle section-tittle2">
-                            <span>What we are doing</span>
+                            <span>Ce que nous faisons</span>
                             <h2>24k Talented people are getting Jobs</h2>
                         </div>
                         <div class="support-caption">
@@ -435,6 +358,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Support Company End-->
 @endsection
