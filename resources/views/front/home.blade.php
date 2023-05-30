@@ -5,8 +5,7 @@
     <div class="slider-area ">
         <!-- Mobile Menu -->
         <div class="slider-active">
-            <div class="single-slider slider-height d-flex align-items-center"
-                data-background="assets/img/hero/bg-human.jpg">
+            <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/bg-human.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-9 col-md-10">
@@ -139,31 +138,33 @@
             </div>
             <!-- More Btn -->
             <!-- Section Button -->
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-12">
                     <div class="browse-btn2 text-center mt-50">
                         <a href="/" class="border-btn2">Tout parcourir</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- Our Services End -->
-    <!-- Online CV Area Start -->
-    <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="assets/auth/images/bg-human.jpg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-10">
-                    <div class="cv-caption text-center">
-                        <p class="pera1">Profil en ligne</p>
-                        <p class="pera2"> Faites la différence avec votre CV en ligne!</p>
-                        <a href="#" class="border-btn2 border-btn4">Télécharger votre CV</a>
+    @guest
+        <!-- Online CV Area Start -->
+        <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="assets/auth/images/bg-human.jpg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="cv-caption text-center">
+                            <p class="pera1">Profil en ligne</p>
+                            <p class="pera2"> Faites la différence avec votre CV en ligne!</p>
+                            <a href="{{ route('register') }}" class="border-btn2 border-btn4">Télécharger votre CV</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Online CV Area End-->
+        <!-- Online CV Area End-->
+    @endguest
     <!-- Featured_job_start -->
     <section class="featured-job-area feature-padding">
         <div class="container">
@@ -178,99 +179,39 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-10">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="job_details.html"><img src=" assets/img/icon/job-list1.png  " alt=""></a>
+                    @foreach ($offers as $offer)
+                        <div class="single-job-items mb-30">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href="{{ route('offer.show', $offer->id) }}"><img
+                                            src=" assets/img/icon/job-list1.png" alt="enterprise logo"></a>
+                                </div>
+                                <div class="job-tittle">
+                                    <a href="{{ route('offer.show', $offer->id) }}">
+                                        <h4>{{ $offer->title }}</h4>
+                                    </a>
+                                    {{-- <ul>
+                                        <li>Creative Agency</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                                        <li>$3500 - $4000</li>
+                                    </ul> --}}
+                                </div>
                             </div>
-                            <div class="job-tittle">
-                                <a href="job_details.html">
-                                    <h4>Spécialiste du marketing numérique</h4>
-                                </a>
-                                <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                    <li>$3500 - $4000</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="items-link f-right">
-                            <a href="job_details.html">Voir les détails</a>
-                            <span>il y a 7 heures</span>
-                        </div>
-                    </div>
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="job_details.html"><img src=" assets/img/icon/job-list2.png  "
-                                        alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="job_details.html">
-                                    <h4>Digital Marketer</h4>
-                                </a>
-                                <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                    <li>$3500 - $4000</li>
-                                </ul>
+                            <div class="items-link f-right">
+                                <a href="{{ route('offer.show', $offer->id) }}">Voir les détails</a>
+                                <span>{{ $offer->created_at->diffForHumans() }}</span>
                             </div>
                         </div>
-                        <div class="items-link f-right">
-                            <a href="job_details.html">Voir les détails</a>
-                            <span>7 hours ago</span>
-                        </div>
-                    </div>
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="job_details.html"><img src=" assets/img/icon/job-list3.png  "
-                                        alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="job_details.html">
-                                    <h4>Digital Marketer</h4>
-                                </a>
-                                <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                    <li>$3500 - $4000</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="items-link f-right">
-                            <a href="job_details.html">Voir les détails</a>
-                            <span>7 hours ago</span>
-                        </div>
-                    </div>
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="job_details.html"><img src=" assets/img/icon/job-list4.png  "
-                                        alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="job_details.html">
-                                    <h4>Digital Marketer</h4>
-                                </a>
-                                <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                    <li>$3500 - $4000</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="items-link f-right">
-                            <a href="job_details.html">Voir les détails</a>
-                            <span>7 hours ago</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
+            {{-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="browse-btn2 text-center mt-50">
+                        <a href="/" class="border-btn2">Tout parcourir</a>
+                    </div>
+                </div>
+            </div> --}}
         </div>
     </section>
     <!-- Featured_job_end -->
