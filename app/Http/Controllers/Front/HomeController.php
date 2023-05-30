@@ -13,4 +13,9 @@ class HomeController extends Controller
         $offers = Offer::limit(5)->orderBy('created_at', 'DESC')->get();
         return view('front.home', compact('offers'));
     }
+
+    public function submitCv()
+    {
+        return view('front.choice');
+    }
 }

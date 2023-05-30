@@ -157,7 +157,7 @@
                         <div class="cv-caption text-center">
                             <p class="pera1">Profil en ligne</p>
                             <p class="pera2"> Faites la différence avec votre CV en ligne!</p>
-                            <a href="{{ route('register') }}" class="border-btn2 border-btn4">Télécharger votre CV</a>
+                            <a href="{{ route('submitCv') }}" class="border-btn2 border-btn4">Télécharger votre CV</a>
                         </div>
                     </div>
                 </div>
