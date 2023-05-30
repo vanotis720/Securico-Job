@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\CandidateController;
 use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\HomeController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,9 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'postRegister'])->name('register.post');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/edit', [UserController::class, 'update'])->name('user.update');
+
+Route::get('/candidate/edit', [CandidateController::class, 'create'])->name('candidate.create');
+Route::post('/candidate/edit', [CandidateController::class, 'store'])->name('candidate.store');

@@ -16,8 +16,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $_target_path = $request->filled('_target_path') ? $request->get('_target_path') : null;
-        return view('front.auth.login', compact('_target_path'));
+        return view('front.auth.login');
     }
 
     public function postLogin(Request $request)
@@ -33,8 +32,8 @@ class AuthController extends Controller
 
         if (Auth::attempt([$fieldType => $request->email, 'password' => $request->password], $remember)) {
 
-            if ($request->has('_target_path')) {
-                return redirect($request->_target_path);
+            if (auth()->user()->first_login) {
+                return redirect()->route('candidate.create');
             }
             return redirect()->route('home');
         }
@@ -43,30 +42,32 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $_target_path = $request->filled('_target_path') ? $request->get('_target_path') : null;
-        return view('front.auth.register', compact('_target_path'));
+        return view('front.auth.register');
     }
 
     public function postRegister(Request $request)
     {
         $request->validate([
-            'name' => 'bail|required|max:50',
+            'name' => 'bail|required|max:25',
+            'first_name' => 'bail|required|max:25',
+            'last_name' => 'nullable|max:25',
+            'sex' => 'required',
+            'type' => 'required',
             'email' => 'bail|required|unique:users,email|email|max:250',
             'password' => 'required|confirmed|min:6'
         ]);
 
         $request->request->add(['password' => bcrypt($request->password)]);
 
-        $user = User::create($request->except('_token', 'password_confirmation'));
+        $user = User::create($request->all());
 
         if ($user) {
 
+            $user->assignRole($request->type);
+
             Auth::login($user);
 
-            if ($request->has('_target_path')) {
-                return redirect($request->_target_path);
-            }
-            return redirect('/');
+            return redirect()->route('candidate.create');
         }
         return redirect()->back()->withInput()->withError('Une erreur s\'est produite, veuillez réessayer');
     }

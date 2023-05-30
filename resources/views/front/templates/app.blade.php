@@ -6,6 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title', ' | securico job')</title>
 
+    <base href="/">
+
     <meta name="description" content="Trouvez les emplois les plus excitants zvec securico job">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

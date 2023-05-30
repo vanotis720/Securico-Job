@@ -19,7 +19,6 @@
                     @include('alert')
                     <form action="{{ route('login.post') }}" method="POST" class="signin-form">
                         @csrf
-                        <input type="hidden" name="_target_path" value="{{ $_target_path }}">
                         <div class="form-group mt-3">
                             <input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
                             <label class="form-control-placeholder" for="email">Email</label>

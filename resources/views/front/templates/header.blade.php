@@ -19,15 +19,14 @@
                                         <li><a href="/">Accueil</a></li>
                                         <li><a href="job_listing.html">Trouver un emploi</a></li>
                                         <li><a href="about.html">À propos</a></li>
-                                        {{-- <li><a href="#">Page</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single-blog.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="job_details.html">job Details</a></li>
-                                            </ul>
-                                        </li> --}}
                                         <li><a href="contact.html">Contact</a></li>
+                                        @auth
+                                            <li class="d-block d-lg-none"><a href="#">Mon profil</a></li>
+                                            <li class="d-block d-lg-none"><a href="{{ route('logout') }}">Déconnexion</a></li>
+                                        @else
+                                            <li class="d-block d-lg-none"><a href="{{ route('register') }}">S'inscrire</a></li>
+                                            <li class="d-block d-lg-none"><a href="{{ route('login') }}">Se connecter</a></li>
+                                        @endauth
                                     </ul>
                                 </nav>
                             </div>
