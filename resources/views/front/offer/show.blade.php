@@ -92,7 +92,7 @@
                             <li>Date de fin des candidatures : <span>{{ $offer->end_at }}</span></li>
                         </ul>
                         <div class="apply-btn2">
-                            <a href="#" class="btn">Postulez maintenant</a>
+                            <a href="{{ route('offer.candidate', $offer->id) }}" class="btn">Postulez maintenant</a>
                         </div>
                     </div>
                     <div class="post-details4  mb-50">

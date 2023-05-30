@@ -37,6 +37,7 @@ Route::middleware('auth')->group(
         Route::post('/candidate/edit', [CandidateController::class, 'store'])->name('candidate.store');
 
 
+        Route::get('/offre/{id}/candidate', [OfferController::class, 'candidate'])->name('offer.candidate');
         Route::get('/offre/{id}', [OfferController::class, 'show'])->name('offer.show');
     }
 );

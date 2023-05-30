@@ -13,4 +13,9 @@ class OfferController extends Controller
         $offer = Offer::findOrFail($id);
         return view('front.offer.show', compact('offer'));
     }
+
+    public function candidate($id)
+    {
+        return redirect()->route('home')->with('success', 'Vous avez postulé avec succès à cette offre');
+    }
 }
