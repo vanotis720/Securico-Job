@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Candidate;
 
 class CandidateController extends Controller
 {
@@ -21,24 +22,16 @@ class CandidateController extends Controller
         $user = User::findOrFail(auth()->user()->id);
 
         $request->validate([
-            'name' => 'bail|required|max:25',
-            'first_name' => 'bail|required|max:25',
-            'last_name' => 'nullable|max:25',
-            'sex' => 'required',
-            'email' => 'bail|required|email',
-            'password' => 'nullable|min:6'
+            'school' => 'bail|required',
+            'skills' => 'required',
         ]);
 
-        if (!empty($request->input('password'))) {
-            $request->request->add(['password' => bcrypt($request->password)]);
-        } else {
-            $request->request->remove('password');
-        }
+        $request->request->add(['user_id' => auth()->user()->id]);
 
-        $user = $user->update($request->except('_token'));
+        $candidate = Candidate::create($request->all());
 
-        if ($user) {
-            return redirect()->route('user.edit')->with('success', 'informations mises a jours');
+        if ($candidate) {
+            return redirect()->route('home')->with('success', 'Informations mises à jour');
         }
         return redirect()->back()->withInput()->withError('Une erreur s\'est produite, veuillez réessayer');
     }

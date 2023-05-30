@@ -12,6 +12,7 @@
                         <div class="col-xl-6 col-lg-9 col-md-10">
                             <div class="hero__caption">
                                 <h1>Trouvez les emplois les plus excitants</h1>
+                                @include('alert')
                             </div>
                         </div>
                     </div>

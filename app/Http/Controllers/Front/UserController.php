@@ -37,7 +37,7 @@ class UserController extends Controller
         $user = $user->update($request->except('_token'));
 
         if ($user) {
-            return redirect()->route('user.edit')->with('success', 'informations mises a jours');
+            return redirect()->route('user.edit')->with('success', 'Informations mises à jour');
         }
         return redirect()->back()->withInput()->withError('Une erreur s\'est produite, veuillez réessayer');
     }
