@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\HomeController;
@@ -42,5 +43,9 @@ Route::middleware('auth')->group(
 
         Route::get('/offre/{id}/candidate', [OfferController::class, 'candidate'])->name('offer.candidate');
         Route::get('/offre/{id}', [OfferController::class, 'show'])->name('offer.show');
+
+
+        // admin action
+        Route::get('/dashboard', [DashboardController::class, 'home'])->name('admin.home');
     }
 );

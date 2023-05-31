@@ -31,11 +31,16 @@ class AuthController extends Controller
         $fieldType = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone_number';
 
         if (Auth::attempt([$fieldType => $request->email, 'password' => $request->password], $remember)) {
+            $user = Auth::user();
 
-            if (auth()->user()->first_login) {
-                return redirect()->route('candidate.create');
+            if ($user->hasRole('Admin')) {
+                return redirect()->route('admin.home');
+            } else {
+                if ($user->first_login) {
+                    return redirect()->route('candidate.create');
+                }
+                return redirect()->route('home');
             }
-            return redirect()->route('home');
         }
         return redirect()->back()->withInput($request->only('email'))->withError('Identifiants incorrects');
     }
