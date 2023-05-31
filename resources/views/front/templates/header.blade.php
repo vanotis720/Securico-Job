@@ -22,10 +22,13 @@
                                         <li><a href="contact.html">Contact</a></li>
                                         @auth
                                             <li class="d-block d-lg-none"><a href="#">Mon profil</a></li>
-                                            <li class="d-block d-lg-none"><a href="{{ route('logout') }}">Déconnexion</a></li>
+                                            <li class="d-block d-lg-none"><a href="{{ route('logout') }}">Déconnexion</a>
+                                            </li>
                                         @else
-                                            <li class="d-block d-lg-none"><a href="{{ route('register') }}">S'inscrire</a></li>
-                                            <li class="d-block d-lg-none"><a href="{{ route('login') }}">Se connecter</a></li>
+                                            <li class="d-block d-lg-none"><a href="{{ route('register') }}">S'inscrire</a>
+                                            </li>
+                                            <li class="d-block d-lg-none"><a href="{{ route('login') }}">Se connecter</a>
+                                            </li>
                                         @endauth
                                     </ul>
                                 </nav>

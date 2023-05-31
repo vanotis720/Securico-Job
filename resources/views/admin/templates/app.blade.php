@@ -34,8 +34,8 @@ Coded by www.creative-tim.com
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS Files -->
-    <link href="admin/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="admin/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+    <link href="assets/admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/admin/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
     @stack('styles')
 </head>
 
@@ -48,7 +48,7 @@ Coded by www.creative-tim.com
             @include('admin.templates.navbar')
 
             <div class="content">
-                
+
                 @yield('content')
 
             </div>
@@ -77,17 +77,17 @@ Coded by www.creative-tim.com
     </div>
 
     <!--   Core JS Files   -->
-    <script src="admin/js/core/jquery.min.js"></script>
-    <script src="admin/js/core/popper.min.js"></script>
-    <script src="admin/js/core/bootstrap.min.js"></script>
-    <script src="admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/admin/js/core/jquery.min.js"></script>
+    <script src="assets/admin/js/core/popper.min.js"></script>
+    <script src="assets/admin/js/core/bootstrap.min.js"></script>
+    <script src="assets/admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 
     <!-- Chart JS -->
-    <script src="admin/js/plugins/chartjs.min.js"></script>
+    <script src="assets/admin/js/plugins/chartjs.min.js"></script>
     <!--  Notifications Plugin    -->
-    <script src="admin/js/plugins/bootstrap-notify.js"></script>
+    <script src="assets/admin/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="admin/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+    <script src="assets/admin/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 
     <script>
         $(document).ready(function() {
