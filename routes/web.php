@@ -53,6 +53,8 @@ Route::middleware('auth')->group(
         Route::get('/dashboard/users/{id}/delete', [AdminUserController::class, 'destroy'])->name('admin.users.delete');
 
         Route::get('/dashboard/offers', [AdminOfferController::class, 'index'])->name('admin.offers');
-        Route::get('/dashboard/offers/{id}', [AdminUserController::class, 'show'])->name('admin.offers.show');
+        Route::get('/dashboard/offers/{id}/check', [AdminOfferController::class, 'check'])->name('admin.offers.check');
+        Route::get('/dashboard/offers/{id}/delete', [AdminOfferController::class, 'destroy'])->name('admin.offers.delete');
+        Route::get('/dashboard/offers/{id}', [AdminOfferController::class, 'show'])->name('admin.offers.show');
     }
 );

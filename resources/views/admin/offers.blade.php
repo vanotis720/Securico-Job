@@ -24,6 +24,9 @@
                                 <th class="text-right">
                                     Recruteur
                                 </th>
+                                <th class="text-right">
+                                    État
+                                </th>
                                 <th class="text-center">
                                     Action
                                 </th>
@@ -43,7 +46,16 @@
                                         <td class="text-right">
                                             {{ $offer->user->name }}
                                         </td>
+                                        <td>
+                                            {{ $offer->is_valid ? 'Valide' : 'En attente' }}
+                                        </td>
                                         <td class="text-center">
+                                            @if (!$offer->is_valid)
+                                                <a href="{{ route('admin.offers.check', $offer->id) }}"
+                                                    class="btn btn-success btn-round mb-1">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+                                            @endif
                                             <a href="{{ route('admin.offers.show', $offer->id) }}"
                                                 class="btn btn-info btn-round">
                                                 <i class="fa fa-eye"></i>

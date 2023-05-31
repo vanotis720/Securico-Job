@@ -18,6 +18,7 @@ class Offer extends Model
         'skills',
         'school',
         'user_id',
+        'is_valid'
     ];
 
     public function user(): BelongsTo

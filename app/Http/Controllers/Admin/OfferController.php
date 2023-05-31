@@ -16,11 +16,26 @@ class OfferController extends Controller
         return view('admin.offers', compact('offers'));
     }
 
+    public function show($id)
+    {
+        $offer = Offer::findOrFail($id);
+        return view('admin.offer', compact('offer'));
+    }
+
+    public function check($id)
+    {
+        $offer = Offer::findOrFail($id);
+        $offer->is_valid = true;
+        $offer->save();
+
+        return redirect()->route('admin.offers.show', $id)->with('success', 'L\'offre a été validée');
+    }
+
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        $user->delete();
+        $offer = Offer::findOrFail($id);
+        $offer->delete();
 
-        return redirect()->route('admin.users')->with('success', 'Le compte a été supprimé');
+        return redirect()->route('admin.offers')->with('success', 'L\'offre a été supprimé');
     }
 }

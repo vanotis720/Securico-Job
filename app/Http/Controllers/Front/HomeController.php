@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $offers = Offer::limit(5)->orderBy('created_at', 'DESC')->get();
+        $offers = Offer::where('is_valid', true)->limit(5)->orderBy('created_at', 'DESC')->get();
         return view('front.home', compact('offers'));
     }
 
