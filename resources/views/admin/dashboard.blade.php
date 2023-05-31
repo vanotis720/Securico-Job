@@ -135,7 +135,7 @@
                                     Date de clôture
                                 </th>
                                 <th class="text-right">
-                                    UUtilisateur
+                                    Recruteur
                                 </th>
                             </thead>
                             <tbody>

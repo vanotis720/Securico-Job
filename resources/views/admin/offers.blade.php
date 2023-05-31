@@ -22,7 +22,7 @@
                                     Date de clôture
                                 </th>
                                 <th class="text-right">
-                                    UUtilisateur
+                                    Recruteur
                                 </th>
                                 <th class="text-center">
                                     Action
@@ -44,8 +44,8 @@
                                             {{ $offer->user->name }}
                                         </td>
                                         <td class="text-center">
-                                            <a href="{{ route('admin.offer.show', $offer->id) }}"
-                                                class="btn btn-danger btn-round">
+                                            <a href="{{ route('admin.offers.show', $offer->id) }}"
+                                                class="btn btn-info btn-round">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                         </td>
