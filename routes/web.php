@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OfferController as AdminOfferController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\HomeController;
@@ -47,5 +49,10 @@ Route::middleware('auth')->group(
 
         // admin action
         Route::get('/dashboard', [DashboardController::class, 'home'])->name('admin.home');
+        Route::get('/dashboard/users', [AdminUserController::class, 'index'])->name('admin.users');
+        Route::get('/dashboard/users/{id}/delete', [AdminUserController::class, 'destroy'])->name('admin.users.delete');
+
+        Route::get('/dashboard/offers', [AdminOfferController::class, 'index'])->name('admin.offers');
+        Route::get('/dashboard/offers/{id}', [AdminUserController::class, 'show'])->name('admin.offers.show');
     }
 );

@@ -1,66 +1,42 @@
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+        {{-- <a href="{{ route('admin.home') }}" class="simple-text logo-mini">
             <div class="logo-image-small">
-                <img src="admin/img/logo-small.png">
+                <img src="assets/img/logo/logo.png">
             </div>
             <!-- <p>CT</p> -->
-        </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-            Creative Tim
-            <!-- <div class="logo-image-big">
-    <img src="admin/img/logo-big.png">
-  </div> -->
+        </a> --}}
+        <a href="{{ route('admin.home') }}" class="simple-text logo-normal">
+            <div class="logo-image-big">
+                <img src="assets/img/logo/logo-large.png">
+            </div>
         </a>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="active ">
-                <a href="./dashboard.html">
+                <a href="{{ route('admin.home') }}">
                     <i class="nc-icon nc-bank"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li>
-                <a href="./icons.html">
-                    <i class="nc-icon nc-diamond"></i>
-                    <p>Icons</p>
-                </a>
-            </li>
-            <li>
-                <a href="./map.html">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>Maps</p>
-                </a>
-            </li>
-            <li>
-                <a href="./notifications.html">
-                    <i class="nc-icon nc-bell-55"></i>
-                    <p>Notifications</p>
-                </a>
-            </li>
-            <li>
-                <a href="./user.html">
+                <a href="{{ route('admin.users') }}">
                     <i class="nc-icon nc-single-02"></i>
-                    <p>User Profile</p>
+                    <p>Utilisateurs</p>
                 </a>
             </li>
             <li>
-                <a href="./tables.html">
-                    <i class="nc-icon nc-tile-56"></i>
-                    <p>Table List</p>
+                <a href="{{ route('admin.offers') }}">
+                    <i class="nc-icon nc-bullet-list-67"></i>
+                    <p>Offres</p>
                 </a>
             </li>
-            <li>
-                <a href="./typography.html">
-                    <i class="nc-icon nc-caps-small"></i>
-                    <p>Typography</p>
-                </a>
-            </li>
+
             <li class="active-pro">
-                <a href="./upgrade.html">
-                    <i class="nc-icon nc-spaceship"></i>
-                    <p>Upgrade to PRO</p>
+                <a href="{{ route('logout') }}">
+                    <i class="nc-icon nc-button-power"></i>
+                    <p>Deconnexion</p>
                 </a>
             </li>
         </ul>

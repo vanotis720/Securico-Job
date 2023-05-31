@@ -145,7 +145,7 @@
                                             {{ $offer->title }}
                                         </td>
                                         <td>
-                                            {!! Str::limit($offer->title, 50) !!}
+                                            {!! Str::limit($offer->description, 50) !!}
                                         </td>
                                         <td>
                                             {{ $offer->end_at }}
