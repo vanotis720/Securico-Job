@@ -23,7 +23,6 @@ class DashboardController extends Controller
             'users_count',
             'admin_count',
             'recruiter_count',
-            'offers',
         ));
     }
 }

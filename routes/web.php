@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OfferController as AdminOfferController;
+use App\Http\Controllers\Admin\RecruiterController as AdminRecruiterController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\AuthController;
@@ -62,5 +63,10 @@ Route::middleware('auth')->group(
         Route::get('/dashboard/offers/{id}/check', [AdminOfferController::class, 'check'])->name('admin.offers.check');
         Route::get('/dashboard/offers/{id}/delete', [AdminOfferController::class, 'destroy'])->name('admin.offers.delete');
         Route::get('/dashboard/offers/{id}', [AdminOfferController::class, 'show'])->name('admin.offers.show');
+
+        Route::get('/recrutement', [AdminRecruiterController::class, 'home'])->name('recruiter.home');
+        Route::get('/recrutement/offers', [AdminRecruiterController::class, 'offers'])->name('recruiter.offers');
+        Route::get('/recrutement/offer/create', [AdminOfferController::class, 'create'])->name('recruiter.offer.create');
+        Route::post('/recrutement/offer/create', [AdminOfferController::class, 'store'])->name('recruiter.offer.store');
     }
 );

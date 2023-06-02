@@ -35,6 +35,8 @@ class AuthController extends Controller
 
             if ($user->hasRole('Admin')) {
                 return redirect()->route('admin.home');
+            } elseif ($user->hasRole('Recruiter')) {
+                return redirect()->route('recruiter.home');
             } else {
                 if ($user->first_login) {
                     return redirect()->route('candidate.create');
@@ -72,7 +74,7 @@ class AuthController extends Controller
 
             Auth::login($user);
 
-            if($request->type == 'Candidate') {
+            if ($request->type == 'Candidate') {
                 return redirect()->route('candidate.create');
             }
             return redirect()->route('recruiter.create');

@@ -14,24 +14,34 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="{{ Request::routeIs('admin.home') ? 'active' : '' }}">
+            <li class="{{ Request::routeIs('admin.home') ? 'active' : (Request::routeIs('recruiter.home') ? 'active' : '') }}">
                 <a href="{{ route('admin.home') }}">
                     <i class="nc-icon nc-bank"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="{{ Request::routeIs('admin.users') ? 'active' : '' }}">
-                <a href="{{ route('admin.users') }}">
-                    <i class="nc-icon nc-single-02"></i>
-                    <p>Utilisateurs</p>
-                </a>
-            </li>
-            <li class="{{ request()->is('dashboard/offers*') ? 'active' : '' }}">
-                <a href="{{ route('admin.offers') }}">
-                    <i class="nc-icon nc-bullet-list-67"></i>
-                    <p>Offres</p>
-                </a>
-            </li>
+
+            @if (auth()->user()->hasRole('Admin'))
+                <li class="{{ Request::routeIs('admin.users') ? 'active' : '' }}">
+                    <a href="{{ route('admin.users') }}">
+                        <i class="nc-icon nc-single-02"></i>
+                        <p>Utilisateurs</p>
+                    </a>
+                </li>
+                <li class="{{ request()->is('dashboard/offers*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.offers') }}">
+                        <i class="nc-icon nc-bullet-list-67"></i>
+                        <p>Offres</p>
+                    </a>
+                </li>
+            @elseif(auth()->user()->hasRole('Recruiter'))
+                <li class="{{ request()->is('recrutement/offers*') ? 'active' : '' }}">
+                    <a href="{{ route('recruiter.offers') }}">
+                        <i class="nc-icon nc-bullet-list-67"></i>
+                        <p>Offres</p>
+                    </a>
+                </li>
+            @endif
 
             <li class="active-pro">
                 <a href="{{ route('logout') }}">
