@@ -10,6 +10,7 @@ use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Front\OfferController;
 use App\Http\Controllers\Front\CandidateController;
 use App\Http\Controllers\Front\CategoryController;
+use App\Http\Controllers\Front\RecruiterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::middleware('auth')->group(
         Route::get('/candidate/edit', [CandidateController::class, 'create'])->name('candidate.create');
         Route::post('/candidate/edit', [CandidateController::class, 'store'])->name('candidate.store');
 
+        Route::get('/enterprise/edit', [RecruiterController::class, 'create'])->name('recruiter.create');
+        Route::post('/enterprise/edit', [RecruiterController::class, 'store'])->name('recruiter.store');
 
         Route::get('/offre/{id}/candidate', [OfferController::class, 'candidate'])->name('offer.candidate');
 

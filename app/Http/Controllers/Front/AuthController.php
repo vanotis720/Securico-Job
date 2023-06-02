@@ -72,7 +72,10 @@ class AuthController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('candidate.create');
+            if($request->type == 'Candidate') {
+                return redirect()->route('candidate.create');
+            }
+            return redirect()->route('recruiter.create');
         }
         return redirect()->back()->withInput()->withError('Une erreur s\'est produite, veuillez réessayer');
     }
