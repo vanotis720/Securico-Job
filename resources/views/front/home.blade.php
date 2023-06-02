@@ -47,97 +47,22 @@
                 </div>
             </div>
             <div class="row d-flex justify-contnet-center">
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-tour"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Conception et création</a></h5>
-                            <span>(653)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-cms"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Conception & Développement</a></h5>
-                            <span>(658)</span>
+                @foreach ($categories as $category)
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <img src="assets/img/icon/{{ $category->icon }}" height="100" width="100"
+                                    class="img-fluid" alt="{{ $category->icon }}">
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a></h5>
+                                <span>({{ $category->offers->count() }})</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-report"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Ventes et Marketing</a></h5>
-                            <span>(658)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-app"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Application mobile</a></h5>
-                            <span>(658)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-helmet"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Construction</a></h5>
-                            <span>(658)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-high-tech"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Informatique</a></h5>
-                            <span>(658)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-real-estate"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Immobilier</a></h5>
-                            <span>(658)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="flaticon-content"></span>
-                        </div>
-                        <div class="services-cap">
-                            <h5><a href="job_listing.html">Rédacteur de contenu</a></h5>
-                            <span>(658)</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <!-- More Btn -->
-            <!-- Section Button -->
+
             {{-- <div class="row">
                 <div class="col-lg-12">
                     <div class="browse-btn2 text-center mt-50">
@@ -147,7 +72,7 @@
             </div> --}}
         </div>
     </div>
-    <!-- Our Services End -->
+
     @guest
         <!-- Online CV Area Start -->
         <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="assets/auth/images/bg-human.jpg">

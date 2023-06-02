@@ -9,6 +9,7 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Front\OfferController;
 use App\Http\Controllers\Front\CandidateController;
+use App\Http\Controllers\Front\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ Route::post('/register', [AuthController::class, 'postRegister'])->name('registe
 
 Route::get('/submit', [HomeController::class, 'submitCv'])->name('submitCv');
 
+Route::get('categorie/{id}', [CategoryController::class, 'show'])->name('category.show');
+
+Route::get('/offre/{id}', [OfferController::class, 'show'])->name('offer.show');
+
 
 Route::middleware('auth')->group(
     function () {
@@ -44,8 +49,6 @@ Route::middleware('auth')->group(
 
 
         Route::get('/offre/{id}/candidate', [OfferController::class, 'candidate'])->name('offer.candidate');
-        Route::get('/offre/{id}', [OfferController::class, 'show'])->name('offer.show');
-
 
         // admin action
         Route::get('/dashboard', [DashboardController::class, 'home'])->name('admin.home');
