@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('recruiters', function (Blueprint $table) {
             $table->id();
             $table->string('enterprise');
-            $table->text('logo')->default('enterprise.png');
+            $table->string('logo')->default('enterprise.png');
             $table->foreignId('user_id');
             $table->timestamps();
         });
