@@ -65,7 +65,7 @@
                                 <tr>
                                     <th>Action</th>
                                     <td>
-                                        @if (!$offer->is_valid)
+                                        @if (auth()->user()->hasRole('Admin') && !$offer->is_valid)
                                             <a href="{{ route('admin.offers.check', $offer->id) }}"
                                                 class="btn btn-success btn-round">
                                                 <i class="fa fa-check"></i>
@@ -73,8 +73,14 @@
                                         @endif
                                         <a href="{{ route('admin.offers.delete', $offer->id) }}"
                                             class="btn btn-danger btn-round">
-                                            <i class="fa fa-trash"></i>
+                                            <i class="fa fa-trash"></i> Supprimer
                                         </a>
+                                        @if (auth()->user()->hasRole('Recruiter'))
+                                            <a href="#"
+                                                class="btn btn-primary btn-round">
+                                                <i class="fa fa-edit"></i>Modifier
+                                            </a>
+                                        @endif
                                     </td>
                                 </tr>
                             </tbody>
