@@ -18,11 +18,17 @@ class Offer extends Model
         'skills',
         'school',
         'user_id',
-        'is_valid'
+        'is_valid',
+        'category_id'
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class)->withDefault();
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class)->withDefault();
     }
 }

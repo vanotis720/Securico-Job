@@ -38,7 +38,7 @@ class RecruiterController extends Controller
         ]);
 
         if ($recruiter) {
-            return redirect()->route('admin.home')->with('success', 'Informations mises à jour');
+            return redirect()->route('recruiter.home')->with('success', 'Informations mises à jour');
         }
         return redirect()->back()->withInput()->withError('Une erreur s\'est produite, veuillez réessayer');
     }

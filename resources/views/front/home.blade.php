@@ -108,18 +108,21 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="{{ route('offer.show', $offer->id) }}"><img
-                                            src=" assets/img/icon/job-list1.png" alt="enterprise logo"></a>
+                                    <a href="{{ route('offer.show', $offer->id) }}">
+                                        <img class="img-fluid" width="100px"
+                                            src="assets/img/icon/{{ $offer->user->recruiter->logo }}"
+                                            alt="enterprise logo"></a>
                                 </div>
                                 <div class="job-tittle">
                                     <a href="{{ route('offer.show', $offer->id) }}">
                                         <h4>{{ $offer->title }}</h4>
                                     </a>
-                                    {{-- <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
-                                    </ul> --}}
+                                    <ul>
+                                        <li>{{ $offer->user->recruiter->enterprise }}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>
+                                            {{ $offer->category->title }}
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="items-link f-right">

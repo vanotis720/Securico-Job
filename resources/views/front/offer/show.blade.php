@@ -27,17 +27,18 @@
                     <div class="single-job-items mb-50">
                         <div class="job-items">
                             <div class="company-img company-img-details">
-                                <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                                <a href="#"><img class="img-fluid" width="150px" src="assets/img/icon/{{ $offer->user->recruiter->logo }}" alt=""></a>
                             </div>
                             <div class="job-tittle">
                                 <a href="#">
                                     <h4>{{ $offer->title }}</h4>
                                 </a>
-                                {{-- <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                    <li>$3500 - $4000</li>
-                                </ul> --}}
+                                <ul>
+                                    <li>{{ $offer->user->recruiter->enterprise }}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>
+                                        {{ $offer->category->title }}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
