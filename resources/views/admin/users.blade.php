@@ -35,9 +35,7 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>
-                                            <a href="{{ route('admin.offers.show', $offer->id) }}">
-                                                {{ $user->name . ' ' . $user->last_name . ' ' . $user->first_name }}
-                                            </a>
+                                            {{ $user->name . ' ' . $user->last_name . ' ' . $user->first_name }}
                                         </td>
                                         <td>
                                             {{ $user->email }}
