@@ -38,7 +38,7 @@
                     <h4 class="card-title">Offres d'emploi récentes</h4>
                 </div>
                 <div class="card-body">
-                    <div class="table-resposive table-hover">
+                    <div class="table-responsive table-hover">
                         <table class="table">
                             <thead class=" text-primary">
                                 <th>
@@ -58,7 +58,9 @@
                                 @foreach ($offers as $offer)
                                     <tr>
                                         <td>
-                                            {{ $offer->title }}
+                                            <a href="{{ route('admin.offers.show', $offer->id) }}">
+                                                {{ $offer->title }}
+                                            </a>
                                         </td>
                                         <td>
                                             {!! Str::limit($offer->description, 50) !!}

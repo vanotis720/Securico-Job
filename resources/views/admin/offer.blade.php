@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     @include('alert')
-                    <div class="table-resposive table-hover">
+                    <div class="table-responsive table-hover">
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -67,12 +67,12 @@
                                     <td>
                                         @if (auth()->user()->hasRole('Admin') && !$offer->is_valid)
                                             <a href="{{ route('admin.offers.check', $offer->id) }}"
-                                                class="btn btn-success btn-round">
+                                                class="btn btn-success btn-round mb-1">
                                                 <i class="fa fa-check"></i>
                                             </a>
                                         @endif
                                         <a href="{{ route('admin.offers.delete', $offer->id) }}"
-                                            class="btn btn-danger btn-round">
+                                            class="btn btn-danger btn-round mb-1">
                                             <i class="fa fa-trash"></i> Supprimer
                                         </a>
                                         @if (auth()->user()->hasRole('Recruiter'))

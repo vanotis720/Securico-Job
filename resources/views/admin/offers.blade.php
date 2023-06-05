@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     @include('alert')
-                    <div class="table-resposive table-hover">
+                    <div class="table-responsive table-hover">
                         <table class="table">
                             <thead class=" text-primary">
                                 <th>
@@ -35,7 +35,9 @@
                                 @foreach ($offers as $offer)
                                     <tr>
                                         <td>
-                                            {{ $offer->title }}
+                                            <a href="{{ route('admin.offers.show', $offer->id) }}">
+                                                {{ $offer->title }}
+                                            </a>
                                         </td>
                                         <td>
                                             {!! Str::limit($offer->description, 50) !!}

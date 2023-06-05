@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     @include('alert')
-                    <div class="table-resposive table-hover">
+                    <div class="table-responsive table-hover">
                         <table class="table">
                             <thead class=" text-primary">
                                 <th>
@@ -35,7 +35,9 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>
-                                            {{ $user->name . ' ' . $user->last_name . ' ' . $user->first_name }}
+                                            <a href="{{ route('admin.offers.show', $offer->id) }}">
+                                                {{ $user->name . ' ' . $user->last_name . ' ' . $user->first_name }}
+                                            </a>
                                         </td>
                                         <td>
                                             {{ $user->email }}
@@ -50,7 +52,8 @@
                                             {{ $user->created_at->diffForHumans() }}
                                         </td>
                                         <td class="text-center">
-                                            <a href="{{ route('admin.users.delete', $user->id) }}" class="btn btn-danger btn-round">
+                                            <a href="{{ route('admin.users.delete', $user->id) }}"
+                                                class="btn btn-danger btn-round">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
