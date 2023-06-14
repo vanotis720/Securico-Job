@@ -2,13 +2,13 @@
     <div class="logo">
         {{-- <a href="{{ route('admin.home') }}" class="simple-text logo-mini">
             <div class="logo-image-small">
-                <img src="assets/img/logo/logo.png">
+                <img src=  "{{ asset('assets/img/logo/logo.png') }}">
             </div>
             <!-- <p>CT</p> -->
         </a> --}}
         <a href="{{ route('admin.home') }}" class="simple-text logo-normal">
             <div class="logo-image-big">
-                <img src="assets/img/logo/logo-large.png">
+                <img src=  "{{ asset('assets/img/logo/logo-large.png') }}">
             </div>
         </a>
     </div>

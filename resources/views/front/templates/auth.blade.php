@@ -10,12 +10,12 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="assets/auth/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}">
 
 </head>
 
@@ -26,10 +26,10 @@
         </div>
     </section>
 
-    <script src=" assets/auth/js/jquery.min.js  "></script>
-    <script src=" assets/auth/js/popper.js  "></script>
-    <script src=" assets/auth/js/bootstrap.min.js  "></script>
-    <script src=" assets/auth/js/main.js  "></script>
+    <script src="{{ asset('assets/auth/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/auth/js/popper.js') }}"></script>
+    <script src="{{ asset('assets/auth/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/auth/js/main.js') }}"></script>
 
 </body>
 

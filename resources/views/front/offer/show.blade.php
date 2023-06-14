@@ -4,7 +4,7 @@
     <!-- Hero Area Start-->
     <div class="slider-area ">
         <div class="single-slider section-overly slider-height2 d-flex align-items-center"
-            data-background="assets/img/hero/bg-human.jpg">
+            data-background=  "{{ asset('assets/img/hero/bg-human.jpg') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -27,7 +27,7 @@
                     <div class="single-job-items mb-50">
                         <div class="job-items">
                             <div class="company-img company-img-details">
-                                <a href="#"><img class="img-fluid" width="150px" src="assets/img/icon/{{ $offer->user->recruiter->logo }}" alt=""></a>
+                                <a href="#"><img class="img-fluid" width="150px" src=  "{{ asset('assets/img/icon/' . $offer->user->recruiter->logo) }}" alt=""></a>
                             </div>
                             <div class="job-tittle">
                                 <a href="#">

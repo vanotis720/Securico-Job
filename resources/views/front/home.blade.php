@@ -5,7 +5,7 @@
     <div class="slider-area ">
         <!-- Mobile Menu -->
         <div class="slider-active">
-            <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/bg-human.jpg">
+            <div class="single-slider slider-height d-flex align-items-center" data-background=  "{{ asset('assets/img/hero/bg-human.jpg') }}">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-9 col-md-10">
@@ -51,7 +51,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="services-ion">
-                                <img src="assets/img/icon/{{ $category->icon }}" height="100" width="100"
+                                <img src=  "{{ asset('assets/img/icon/' . $category->icon) }}" height="100" width="100"
                                     class="img-fluid" alt="{{ $category->icon }}">
                             </div>
                             <div class="services-cap">
@@ -75,7 +75,7 @@
 
     @guest
         <!-- Online CV Area Start -->
-        <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="assets/auth/images/bg-human.jpg">
+        <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background=  "{{ asset('assets/auth/images/bg-human.jpg') }}">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
@@ -110,7 +110,7 @@
                                 <div class="company-img">
                                     <a href="{{ route('offer.show', $offer->id) }}">
                                         <img class="img-fluid" width="100px"
-                                            src="assets/img/icon/{{ $offer->user->recruiter->logo }}"
+                                            src="{{ asset('assets/img/icon/' . $offer->user->recruiter->logo) }}"
                                             alt="enterprise logo"></a>
                                 </div>
                                 <div class="job-tittle">
