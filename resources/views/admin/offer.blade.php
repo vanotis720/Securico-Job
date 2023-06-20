@@ -30,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        Études requises
+                                        脡tudes requises
                                     </th>
                                     <td>
                                         {{ $offer->school }}
@@ -38,7 +38,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        Compétences requises
+                                        Comp茅tences requises
                                     </th>
                                     <td>
                                         @foreach (explode(' ', $offer->skills) as $item)
@@ -48,7 +48,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        Date de clôture
+                                        Date de cl么ture
                                     </th>
                                     <td>
                                         {{ $offer->end_at }}
@@ -65,22 +65,33 @@
                                 <tr>
                                     <th>Action</th>
                                     <td>
-                                        @if (auth()->user()->hasRole('Admin') && !$offer->is_valid)
-                                            <a href="{{ route('admin.offers.check', $offer->id) }}"
-                                                class="btn btn-success btn-round mb-1">
-                                                <i class="fa fa-check"></i>
-                                            </a>
+                                        @if (auth()->user()->hasRole('Admin'))
+                                            @if ($offer->is_valid)
+                                                @if ($offer->applications->count() > 0)
+                                                    <a href="{{ route('admin.offers.applications', $offer->id) }}"
+                                                        class="btn btn-info btn-round">
+                                                        <i class="fa fa-eye"></i> Voir les candidatures
+                                                    </a>
+                                                @else
+                                                    <p class="font-weight-bold">Pas encore de candidature</p>
+                                                    <a href="{{ route('admin.offers.delete', $offer->id) }}"
+                                                        class="btn btn-danger btn-round mb-1">
+                                                        <i class="fa fa-trash"></i> Supprimer
+                                                    </a>
+                                                @endif
+                                            @else
+                                                <a href="{{ route('admin.offers.check', $offer->id) }}"
+                                                    class="btn btn-success btn-round mb-1">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+                                            @endif
                                         @endif
-                                        <a href="{{ route('admin.offers.delete', $offer->id) }}"
-                                            class="btn btn-danger btn-round mb-1">
-                                            <i class="fa fa-trash"></i> Supprimer
-                                        </a>
-                                        @if (auth()->user()->hasRole('Recruiter'))
-                                            <a href="#"
-                                                class="btn btn-primary btn-round">
+
+                                        {{-- @if (auth()->user()->hasRole('Recruiter'))
+                                            <a href="#" class="btn btn-primary btn-round">
                                                 <i class="fa fa-edit"></i>Modifier
                                             </a>
-                                        @endif
+                                        @endif --}}
                                     </td>
                                 </tr>
                             </tbody>

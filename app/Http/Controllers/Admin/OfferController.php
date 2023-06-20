@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Offer;
+use App\Models\OfferCandidate;
 use Illuminate\Support\Facades\Auth;
 
 class OfferController extends Controller
@@ -15,6 +16,20 @@ class OfferController extends Controller
     {
         $offers = Offer::orderBy('created_at', 'DESC')->get();
         return view('admin.offers', compact('offers'));
+    }
+
+    public function applications($offer)
+    {
+        $applications = OfferCandidate::orderBy('created_at', 'ASC')->get();
+        return view('admin.applications.applications', compact('applications'));
+    }
+
+    public function validation($candidate_id, $action)
+    {
+        $candidate = OfferCandidate::findOrFail($candidate_id);
+        $candidate->state = $action;
+        $candidate->save();
+        return redirect()->back();
     }
 
     public function show($id)
