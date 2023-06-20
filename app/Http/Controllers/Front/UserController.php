@@ -5,10 +5,17 @@ namespace App\Http\Controllers\Front;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\OfferCandidate;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function applications()
+    {
+        $applications = OfferCandidate::where('user_id', auth()->user()->id)->orderBy('created_at', 'DESC')->get();
+        return view('front.user.applications', compact('applications'));
+    }
+
     public function edit()
     {
         $user = User::findOrFail(auth()->user()->id);

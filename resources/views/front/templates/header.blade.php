@@ -20,7 +20,8 @@
                                         <li><a href="{{ route('submitCv') }}">Trouver un emploi</a></li>
                                         <li><a href="#">À propos</a></li>
                                         @auth
-                                            {{-- <li class="d-block d-lg-none"><a href="#">Mon profil</a></li> --}}
+                                            <li class="d-block d-lg-none"><a href="{{ route('applications') }}">Mes
+                                                    candidatures</a></li>
                                             <li class="d-block d-lg-none"><a href="{{ route('logout') }}">Déconnexion</a>
                                             </li>
                                         @else
@@ -35,7 +36,7 @@
                             <!-- Header-btn -->
                             <div class="header-btn d-none f-right d-lg-block">
                                 @auth
-                                    {{-- <a href="#" class="btn head-btn1">Mon profil</a> --}}
+                                    <a href="{{ route('applications') }}" class="btn head-btn1">Mes candidatures</a>
                                     <a href="{{ route('logout') }}" class="btn head-btn2">Déconnexion</a>
                                 @else
                                     <a href="{{ route('register') }}" class="btn head-btn1">S'inscrire</a>
