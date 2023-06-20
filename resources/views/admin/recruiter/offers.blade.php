@@ -15,6 +15,7 @@
                     <div class="table-responsive table-hover">
                         <table class="table">
                             <thead class=" text-primary">
+                                <th></th>
                                 <th>
                                     Titre
                                 </th>
@@ -37,6 +38,11 @@
                             <tbody>
                                 @foreach ($offers as $offer)
                                     <tr>
+                                        <td>
+                                            <img class="img-fluid" width="150px"
+                                                src="{{ asset('assets/img/icon/' . $offer->picture) }}" 
+                                                alt="{{ $offer->picture }}">
+                                        </td>
                                         <td>
                                             <a href="{{ route('admin.offers.show', $offer->id) }}">
                                                 {{ $offer->title }}

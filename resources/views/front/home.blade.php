@@ -110,7 +110,7 @@
                                 <div class="company-img">
                                     <a href="{{ route('offer.show', $offer->id) }}">
                                         <img class="img-fluid" width="100px"
-                                            src="{{ asset('assets/img/icon/' . $offer->user->recruiter->logo) }}"
+                                            src="{{ asset('assets/img/icon/' . $offer->picture) }}"
                                             alt="enterprise logo"></a>
                                 </div>
                                 <div class="job-tittle">

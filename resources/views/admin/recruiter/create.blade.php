@@ -11,6 +11,14 @@
                 <form class="form" action="{{ route('recruiter.offer.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="image">Image de l'offre</label>
+                                <input type="file" class="form-control" class="single-input-secondary" name="image" id="image"
+                                    placeholder="Image de l'offre" required>
+                            </div>
+                        </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="title">Titre de l'offre @include('required')</label>

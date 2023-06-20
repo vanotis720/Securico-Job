@@ -27,7 +27,9 @@
                     <div class="single-job-items mb-50">
                         <div class="job-items">
                             <div class="company-img company-img-details">
-                                <a href="#"><img class="img-fluid" width="150px" src=  "{{ asset('assets/img/icon/' . $offer->user->recruiter->logo) }}" alt=""></a>
+                                <a href="#">
+                                    <img class="img-fluid" width="150px" src="{{ asset('assets/img/icon/' . $offer->picture) }}" alt="">
+                                </a>
                             </div>
                             <div class="job-tittle">
                                 <a href="#">

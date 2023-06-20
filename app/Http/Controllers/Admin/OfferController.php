@@ -13,7 +13,7 @@ class OfferController extends Controller
 {
     public function index()
     {
-        $offers = Offer::orderBy('created_at','DESC')->get();
+        $offers = Offer::orderBy('created_at', 'DESC')->get();
         return view('admin.offers', compact('offers'));
     }
 
@@ -49,6 +49,7 @@ class OfferController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'title' => 'bail|required',
             'description' => 'bail|required',
             'end_at' => 'required',
@@ -57,6 +58,11 @@ class OfferController extends Controller
             'category_id' => 'bail|required',
         ]);
 
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->request->add(['picture' => $imageName]);
+            $request->image->move(public_path('assets/img/icon'), $imageName);
+        }
         $request->request->add(['user_id' => auth()->user()->id]);
 
         $offer = Offer::create($request->all());
