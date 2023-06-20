@@ -4,7 +4,7 @@
     <!-- Hero Area Start-->
     <div class="slider-area ">
         <div class="single-slider section-overly slider-height2 d-flex align-items-center"
-            data-background=  "{{ asset('assets/img/hero/bg-human.jpg') }}">
+            data-background="{{ asset('assets/img/hero/bg-human.jpg') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -22,13 +22,14 @@
         <div class="container">
             <div class="row justify-content-between">
                 <!-- Left Content -->
-                <div class="col-xl-7 col-lg-8">
+                <div class="col-xl-7 col-lg-7">
                     <!-- job single -->
                     <div class="single-job-items mb-50">
                         <div class="job-items">
                             <div class="company-img company-img-details">
                                 <a href="#">
-                                    <img class="img-fluid" width="150px" src="{{ asset('assets/img/icon/' . $offer->picture) }}" alt="">
+                                    <img class="img-fluid" width="150px"
+                                        src="{{ asset('assets/img/icon/' . $offer->picture) }}" alt="">
                                 </a>
                             </div>
                             <div class="job-tittle">
@@ -80,7 +81,7 @@
 
                 </div>
                 <!-- Right Content -->
-                <div class="col-xl-4 col-lg-4">
+                <div class="col-xl-5 col-lg-5">
                     <div class="post-details3  mb-50">
                         <!-- Small Section Tittle -->
                         <div class="small-section-tittle">
@@ -94,8 +95,22 @@
                             <li>Salary : <span>$7,800 yearly</span></li> --}}
                             <li>Date de fin des candidatures : <span>{{ $offer->end_at }}</span></li>
                         </ul>
+
+                        @include('alert')
+
                         <div class="apply-btn2">
-                            <a href="{{ route('offer.candidate', $offer->id) }}" class="btn">Postulez maintenant</a>
+                            @auth
+                                @if (auth()->user()->hasRole('Candidate'))
+                                    <a href="{{ route('offer.candidate', $offer->id) }}" class="btn">Postulez maintenant</a>
+                                @elseif (auth()->user()->hasRole('Admin'))
+                                    <a href="{{ route('admin.home') }}" class="btn">Accéder au tableau de bord</a>
+                                @elseif (auth()->user()->hasRole('Recruiter'))
+                                    <a href="{{ route('recruiter.home') }}" class="btn">Accéder au tableau de bord</a>
+                                @endif
+                            @endauth
+                            @guest
+                                <a href="{{ route('login') }}" class="btn">Connectez-vous pour postuler</a>
+                            @endguest
                         </div>
                     </div>
                     <div class="post-details4  mb-50">

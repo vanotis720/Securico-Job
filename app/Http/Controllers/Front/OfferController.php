@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\User;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Offer;
+use App\Models\OfferCandidate;
 
 class OfferController extends Controller
 {
@@ -14,8 +16,16 @@ class OfferController extends Controller
         return view('front.offer.show', compact('offer'));
     }
 
-    public function candidate($id)
+    public function candidate($offer)
     {
-        return redirect()->route('home')->with('success', 'Vous avez postulé avec succès à cette offre');
+        $candidate = OfferCandidate::create([
+            'offer_id' => $offer,
+            'user_id' => auth()->user()->id
+        ]);
+
+        if ($candidate) {
+            return redirect()->route('home')->with('success', 'Vous avez postulé avec succès à cette offre');
+        }
+        return redirect()->back()->withError('Une erreur s\'est produite, veuillez réessayer');
     }
 }
