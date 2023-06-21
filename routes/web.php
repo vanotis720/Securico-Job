@@ -25,6 +25,7 @@ use App\Http\Controllers\Front\RecruiterController;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/offres', [OfferController::class, 'index'])->name('offers.index');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');

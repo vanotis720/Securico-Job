@@ -10,6 +10,12 @@ use App\Models\OfferCandidate;
 
 class OfferController extends Controller
 {
+    public function index()
+    {
+        $offers = Offer::where('is_valid', true)->orderBy('created_at', 'DESC')->get();
+        return view('front.offer.index', compact('offers'));
+    }
+
     public function show($id)
     {
         $offer = Offer::findOrFail($id);

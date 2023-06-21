@@ -17,7 +17,7 @@
                                 <nav class="d-none d-lg-block">
                                     <ul id="navigation">
                                         <li><a href="/">Accueil</a></li>
-                                        <li><a href="{{ route('submitCv') }}">Trouver un emploi</a></li>
+                                        <li><a href="{{ route('offers.index') }}">Trouver un emploi</a></li>
                                         <li><a href="#">À propos</a></li>
                                         @auth
                                             <li class="d-block d-lg-none"><a href="{{ route('applications') }}">Mes
