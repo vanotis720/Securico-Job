@@ -30,6 +30,7 @@
                                 </div>
                             @enderror
                         </div>
+
                         <div class="form-group mt-3">
                             <label for="last_name"> Votre Post-nom </label>
                             <input type="text" name="last_name" value="{{ old('last_name') }}" class="form-control">
@@ -39,6 +40,7 @@
                                 </div>
                             @enderror
                         </div>
+
                         <div class="form-group mt-3">
                             <label for="first_name">Votre Prenom @include('required') </label>
                             <input type="text" name="first_name" value="{{ old('first_name') }}" class="form-control"
@@ -49,6 +51,7 @@
                                 </div>
                             @enderror
                         </div>
+
                         <div class="form-group mt-3">
                             <label for="sex">Genre @include('required')</label>
                             <select class="form-control" name="sex" id="sex" required>
@@ -56,6 +59,7 @@
                                 <option value="F">Feminin</option>
                             </select>
                         </div>
+
                         <div class="form-group mt-3">
                             <label for="type">Je suis @include('required')</label>
                             <select class="form-control" name="type" id="type" required>
@@ -63,15 +67,27 @@
                                 <option value="Recruiter">Un Recruteur</option>
                             </select>
                         </div>
+
                         <div class="form-group mt-3">
                             <label for="email">Email @include('required')</label>
-                            <input type="text" name="email" value="{{ old('email') }}" class="form-control" required>
+                            <input type="email" name="email" value="{{ old('email') }}" class="form-control" required>
                             @error('email')
                                 <div class="alert alert-danger text-center msg" id="error">
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
                         </div>
+
+                        <div class="form-group mt-3">
+                            <label for="phone">Numéro de téléphone @include('required')</label>
+                            <input type="tel" name="phone" value="{{ old('phone') }}" class="form-control" required>
+                            @error('phone')
+                                <div class="alert alert-danger text-center msg" id="error">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label for="password">Mot de passe @include('required')</label>
                             <input id="password-field" name="password" type="password" class="form-control" required>
@@ -83,6 +99,7 @@
                                 </div>
                             @enderror
                         </div>
+                        
                         <div class="form-group">
                             <label for="password_confirmation">Répéter le Mot de
                                 passe @include('required')</label>

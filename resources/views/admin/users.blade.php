@@ -19,6 +19,9 @@
                                     Email
                                 </th>
                                 <th>
+                                    Téléphone
+                                </th>
+                                <th>
                                     Genre
                                 </th>
                                 <th>
@@ -39,6 +42,9 @@
                                         </td>
                                         <td>
                                             {{ $user->email }}
+                                        </td>
+                                        <td>
+                                            {{ $user->phone }}
                                         </td>
                                         <td>
                                             {{ $user->sex }}
