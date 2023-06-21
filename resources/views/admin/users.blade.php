@@ -44,7 +44,13 @@
                                             {{ $user->sex }}
                                         </td>
                                         <td>
-                                            {{ $user->roles->first()->name }}
+                                            @if ($user->roles->first()->name == 'Recruiter')
+                                                Recruteur
+                                            @elseif ($user->roles->first()->name == 'Candidate')
+                                                Candidat
+                                            @else
+                                                Administrateur
+                                            @endif
                                         </td>
                                         <td>
                                             {{ $user->created_at->diffForHumans() }}
