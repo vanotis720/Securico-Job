@@ -62,6 +62,8 @@
                                             {{ $user->created_at->diffForHumans() }}
                                         </td>
                                         <td class="text-center">
+                                            @if (auth()->user()->hasRole('Admin') && $user->id != auth()->id)
+                                            @endif
                                             <a href="{{ route('admin.users.delete', $user->id) }}"
                                                 class="btn btn-danger btn-round">
                                                 <i class="fa fa-trash"></i>

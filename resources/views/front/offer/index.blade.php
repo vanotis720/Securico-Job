@@ -1,7 +1,7 @@
 @extends('front.templates.app')
 @section('title', 'Trouvez les emplois les plus excitants')
 @section('content')
-    
+
     <section class="featured-job-area">
         <div class="container">
             <!-- Section Tittle -->
@@ -29,7 +29,7 @@
                                         <h4>{{ $offer->title }}</h4>
                                     </a>
                                     <ul>
-                                        <li>{{ $offer->user->recruiter->enterprise }}</li>
+                                        <li>{{ $offer->user->recruiter && $offer->user->recruiter->enterprise }}</li>
                                         <li><i class="fas fa-map-marker-alt"></i>
                                             {{ $offer->category->title }}
                                         </li>
@@ -46,5 +46,5 @@
             </div>
         </div>
     </section>
-    
+
 @endsection

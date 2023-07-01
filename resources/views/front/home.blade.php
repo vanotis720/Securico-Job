@@ -118,7 +118,7 @@
                                         <h4>{{ $offer->title }}</h4>
                                     </a>
                                     <ul>
-                                        <li>{{ $offer->user->recruiter->enterprise }}</li>
+                                        <li>{{ $offer->user->recruiter && $offer->user->recruiter->enterprise }}</li>
                                         <li><i class="fas fa-map-marker-alt"></i>
                                             {{ $offer->category->title }}
                                         </li>
