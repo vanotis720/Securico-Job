@@ -88,4 +88,38 @@ class OfferController extends Controller
             return redirect()->route('recruiter.offers')->with('error', 'une erreur s\'est produite');
         }
     }
+
+    public function edit($id)
+    {
+        $categories = Category::all();
+        $offer = Offer::findOrFail($id);
+        return view('admin.recruiter.edit', compact('categories', 'offer'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'bail|required',
+            'description' => 'bail|required',
+            'end_at' => 'required',
+            'school' => 'required',
+            'skills' => 'required',
+            'category_id' => 'bail|required',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->request->add(['picture' => $imageName]);
+            $request->image->move(public_path('assets/img/icon'), $imageName);
+        }
+
+        $offer = Offer::where('id', $id)
+            ->update($request->except('_token'));
+
+        if ($offer) {
+            return redirect()->route('admin.offers.show', $id)->with('success', 'Modification enregistrer avec succès');
+        } else {
+            return redirect()->route('recruiter.offers')->with('error', 'une erreur s\'est produite');
+        }
+    }
 }

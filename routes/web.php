@@ -73,5 +73,7 @@ Route::middleware('auth')->group(
         Route::get('/recrutement/offers', [AdminRecruiterController::class, 'offers'])->name('recruiter.offers');
         Route::get('/recrutement/offer/create', [AdminOfferController::class, 'create'])->name('recruiter.offer.create');
         Route::post('/recrutement/offer/create', [AdminOfferController::class, 'store'])->name('recruiter.offer.store');
+        Route::get('/recrutement/offer/{id}/edit', [AdminOfferController::class, 'edit'])->name('recruiter.offer.edit');
+        Route::post('/recrutement/offer/{id}/edit', [AdminOfferController::class, 'update'])->name('recruiter.offer.update');
     }
 );

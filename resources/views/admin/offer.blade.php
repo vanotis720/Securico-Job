@@ -79,6 +79,10 @@
                                                     class="btn btn-danger btn-round mb-1">
                                                     <i class="fa fa-trash"></i> Supprimer
                                                 </a>
+                                                <a href="{{ route('recruiter.offer.edit', $offer->id) }}"
+                                                    class="btn btn-warning btn-round mb-1">
+                                                    <i class="fa fa-trash"></i> Modifier
+                                                </a>
                                             @else
                                                 <a href="{{ route('admin.offers.check', $offer->id) }}"
                                                     class="btn btn-success btn-round mb-1">
