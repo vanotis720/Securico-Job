@@ -74,11 +74,11 @@
                                                     </a>
                                                 @else
                                                     <p class="font-weight-bold">Pas encore de candidature</p>
-                                                    <a href="{{ route('admin.offers.delete', $offer->id) }}"
-                                                        class="btn btn-danger btn-round mb-1">
-                                                        <i class="fa fa-trash"></i> Supprimer
-                                                    </a>
                                                 @endif
+                                                <a href="{{ route('admin.offers.delete', $offer->id) }}"
+                                                    class="btn btn-danger btn-round mb-1">
+                                                    <i class="fa fa-trash"></i> Supprimer
+                                                </a>
                                             @else
                                                 <a href="{{ route('admin.offers.check', $offer->id) }}"
                                                     class="btn btn-success btn-round mb-1">

@@ -31,13 +31,13 @@
                                         </td>
 
                                         <td>
-                                            @foreach (explode(',', $application->user->candidate->skills) as $item)
+                                            @foreach (explode(',', $application->user->candidate?->skills) as $item)
                                                 <li>{{ $item }}</li>
                                             @endforeach
                                         </td>
 
                                         <td>
-                                            {{ $application->user->candidate->school }}
+                                            {{ $application->user->candidate?->school }}
                                         </td>
 
                                         <td>
