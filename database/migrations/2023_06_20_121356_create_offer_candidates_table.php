@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('offer_candidates', function (Blueprint $table) {
             $table->id();
-            $table->enum('state', ['init','rejcted', 'accepted'])->default('init');
+            $table->enum('state', ['init','rejected', 'accepted'])->default('init');
             $table->foreignId('offer_id');
             $table->foreignId('user_id');
             $table->timestamps();
