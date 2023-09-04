@@ -6,6 +6,15 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Liste des offres d'emploi disponibles</h4>
+                    <div class="form-group">
+                        <label for="school">Filtre par catégorie</label>
+                        <select class="form-control" name="filter" id="filter" onchange="filterBy()">
+                            <option value="">Sélectionner une catégorie</option>
+                            @foreach ($categories as $item)
+                                <option @selected($item->title == $category)>{{ $item->title }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="card-body">
                     @include('alert')
@@ -18,6 +27,9 @@
                                 </th>
                                 <th>
                                     Description
+                                </th>
+                                <th>
+                                    Catégorie
                                 </th>
                                 <th>
                                     Date de clôture
@@ -46,7 +58,10 @@
                                             </a>
                                         </td>
                                         <td>
-                                            {!! Str::limit($offer->description, 50) !!}
+                                            {!! Str::limit($offer->description, 25) !!}
+                                        </td>
+                                        <td>
+                                            {{ $offer->category->title }}
                                         </td>
                                         <td>
                                             {{ $offer->end_at }}
@@ -78,4 +93,12 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+        <script>
+            function filterBy() {
+                var thisvalue = $("#filter option:selected").text();
+                window.location.href = 'http://localhost:8000/dashboard/offers?category=' + thisvalue;
+            }
+        </script>
+    @endpush
 @endsection

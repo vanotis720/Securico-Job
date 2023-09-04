@@ -12,10 +12,19 @@ use Illuminate\Support\Facades\Auth;
 
 class OfferController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $offers = Offer::orderBy('created_at', 'DESC')->get();
-        return view('admin.offers', compact('offers'));
+        $category = $request->category ?? null;
+        if ($category) {
+            $offers = Offer::join('categories',  'categories.id', 'category_id')
+                ->where('categories.title', $category)
+                ->orderBy('offers.created_at', 'DESC')
+                ->get();
+        } else {
+            $offers = Offer::orderBy('created_at', 'DESC')->get();
+        }
+        $categories = Category::all();
+        return view('admin.offers', compact('offers', 'categories', 'category'));
     }
 
     public function applications($offer)
