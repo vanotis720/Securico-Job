@@ -5,7 +5,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Liste des offres d'emploi disponibles</h4>
+                    <h4 class="card-title align-left">Liste des offres d'emploi disponibles</h4>
+                    <a href="{{ route('admin.offers.pdf') }}" class="btn btn-info btn-round align-right">
+                        Exporter en PDF <i class="fa fa-save"></i>
+                    </a>
                     <div class="form-group">
                         <label for="school">Filtre par catégorie</label>
                         <select class="form-control" name="filter" id="filter" onchange="filterBy()">

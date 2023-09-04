@@ -65,6 +65,7 @@ Route::middleware('auth')->group(
         Route::get('/dashboard/offers', [AdminOfferController::class, 'index'])->name('admin.offers');
         Route::get('/dashboard/offers/{id}/check', [AdminOfferController::class, 'check'])->name('admin.offers.check');
         Route::get('/dashboard/offers/{id}/delete', [AdminOfferController::class, 'destroy'])->name('admin.offers.delete');
+        Route::get('/dashboard/offers/save', [AdminOfferController::class, 'savePDF'])->name('admin.offers.pdf');
         Route::get('/dashboard/offers/{id}', [AdminOfferController::class, 'show'])->name('admin.offers.show');
         Route::get('/dashboard/offers/{id}/applications', [AdminOfferController::class, 'applications'])->name('admin.offers.applications');
         Route::get('/dashboard/applications/{id}/action/{action}', [AdminOfferController::class, 'validation'])->name('admin.offers.validation');

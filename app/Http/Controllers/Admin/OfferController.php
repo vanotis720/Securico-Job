@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Offer;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Models\OfferCandidate;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
+
 
 class OfferController extends Controller
 {
@@ -130,5 +130,22 @@ class OfferController extends Controller
         } else {
             return redirect()->route('recruiter.offers')->with('error', 'une erreur s\'est produite');
         }
+    }
+
+    public function savePDF()
+    {
+        $data = Offer::orderBy('created_at', 'DESC')->get();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('admin.print.offers', compact('data'));
+        $pdf->setPaper('a4', 'landscape');
+
+        $path = public_path() . '-offers' . date('Y-m-d') . '.pdf';
+        if (!file_exists($path)) {
+            $pdf->save($path);
+        }
+
+        $headers = ['Content-Type: application/pdf'];
+
+        return response()->download($path);
     }
 }
